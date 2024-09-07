@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
 import { HeartIcon } from "@heroicons/react/24/solid";
 
-// Correct useRouter for pages-based Next.js projects
-
 /**
  * Site footer
  */
@@ -19,16 +17,8 @@ export const Footer = () => {
         <ul className="menu menu-horizontal w-full">
           <div className="flex justify-center items-center gap-2 text-sm w-full text-white">
             <div>
-              <a
-                href="https://cureledger.com"
-                target="_blank"
-                rel="noreferrer"
-                className="underline underline-offset-2 hover:opacity-80 transition-opacity"
-              >
-                CureLedger.com
-              </a>
+              <p>&copy; 2024 Rymedi, Inc.</p> {/* Add semicolon after &copy */}
             </div>
-            <span>·</span>
             <div>
               Built with <HeartIcon className="inline-block h-4 w-4" /> by{" "}
               <a
