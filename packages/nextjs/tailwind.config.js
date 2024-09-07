@@ -2,58 +2,28 @@
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./utils/**/*.{js,ts,jsx,tsx}"],
   plugins: [require("daisyui")],
-  darkTheme: "scaffoldEthDark",
+  darkTheme: "customDarkTheme",
   // DaisyUI theme colors
   daisyui: {
     themes: [
       {
-        scaffoldEth: {
-          primary: "#93BBFB",
-          "primary-content": "#212638",
-          secondary: "#DAE8FF",
-          "secondary-content": "#212638",
-          accent: "#93BBFB",
-          "accent-content": "#212638",
-          neutral: "#212638",
-          "neutral-content": "#ffffff",
-          "base-100": "#ffffff",
-          "base-200": "#f4f8ff",
-          "base-300": "#DAE8FF",
-          "base-content": "#212638",
-          info: "#93BBFB",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
-
-          ".tooltip": {
-            "--tooltip-tail": "6px",
-          },
-          ".link": {
-            textUnderlineOffset: "2px",
-          },
-          ".link:hover": {
-            opacity: "80%",
-          },
-        },
-      },
-      {
-        scaffoldEthDark: {
-          primary: "#212638",
-          "primary-content": "#F9FBFF",
-          secondary: "#323f61",
-          "secondary-content": "#F9FBFF",
-          accent: "#4969A6",
-          "accent-content": "#F9FBFF",
-          neutral: "#F9FBFF",
-          "neutral-content": "#385183",
-          "base-100": "#385183",
-          "base-200": "#2A3655",
-          "base-300": "#212638",
-          "base-content": "#F9FBFF",
-          info: "#385183",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
+        customDarkTheme: {
+          primary: "#7C83DB", // Bright periwinkle/violet
+          "primary-content": "#FFFFFF",
+          secondary: "#000000", // Cool black
+          "secondary-content": "#B3A7FF", // Light violet
+          accent: "#7C83DB", // Bright periwinkle/violet
+          "accent-content": "#FFFFFF",
+          neutral: "#D7C7FF", // Very light violet
+          "neutral-content": "#000000", // Cool black
+          "base-100": "#000000", // Cool black base
+          "base-200": "#000000", // Slightly lighter black
+          "base-300": "#000000", // Even lighter black
+          "base-content": "#FFFFFF", // White text content
+          info: "#B3A7FF", // Light violet
+          success: "#7C83DB", // Bright periwinkle/violet
+          warning: "#D7C7FF", // Very light violet
+          error: "#B3A7FF", // Light violet
 
           ".tooltip": {
             "--tooltip-tail": "6px",
@@ -70,7 +40,6 @@ module.exports = {
     ],
   },
   theme: {
-    // Extend Tailwind classes (e.g. font-bai-jamjuree, animate-grow)
     extend: {
       fontFamily: {
         "space-grotesk": ["Space Grotesk", "sans-serif"],

@@ -14,14 +14,14 @@ type MetaHeaderProps = {
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` : "/";
 
 export const MetaHeader = ({
-  title = "Scaffold-ETH 2 - Open source toolkit to build dApps on Ethereum",
-  description = "An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.",
-  image = "og-image.png",
+  title = "CureLedger",
+  description = "Verifiable Health Data Marketplace",
+  image = "/assets/logo-text.png",
   twitterCard = "summary_large_image",
   children,
 }: MetaHeaderProps) => {
   const imageUrl = baseUrl + image;
-  const twitterImageUrl = baseUrl + "twitterThumbnail.png";
+  const twitterImageUrl = baseUrl + "/assets/logo-text.png";
 
   return (
     <Head>

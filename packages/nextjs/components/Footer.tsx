@@ -1,46 +1,51 @@
+import { useRouter } from "next/router";
 import { HeartIcon } from "@heroicons/react/24/solid";
+
+// Correct useRouter for pages-based Next.js projects
 
 /**
  * Site footer
  */
 export const Footer = () => {
+  const router = useRouter();
+
+  const handlePrivacyPolicyClick = () => {
+    router.push("/privacy-policy"); // Use the route to navigate to privacy policy
+  };
+
   return (
-    <div className="min-h-0 p-5 bg-neutral">
+    <div className="min-h-0 p-5 bg-base-100">
       <div className="w-full">
         <ul className="menu menu-horizontal w-full">
           <div className="flex justify-center items-center gap-2 text-sm w-full text-white">
             <div>
               <a
-                href="https://github.com/scaffold-eth/scaffold-eth-2"
+                href="https://cureledger.com"
                 target="_blank"
                 rel="noreferrer"
                 className="underline underline-offset-2 hover:opacity-80 transition-opacity"
               >
-                Fork me
+                CureLedger.com
               </a>
             </div>
             <span>·</span>
             <div>
-              Built with <HeartIcon className="inline-block h-4 w-4" /> at 🏰{" "}
+              Built with <HeartIcon className="inline-block h-4 w-4" /> by{" "}
               <a
-                href="https://buidlguidl.com/"
+                href="https://rymedi.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="underline underline-offset-2 hover:opacity-80 transition-opacity"
               >
-                BuidlGuidl
+                Team Rymedi
               </a>
             </div>
             <span>·</span>
-            <div>
-              <a
-                href="https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA"
-                target="_blank"
-                rel="noreferrer"
-                className="underline underline-offset-2 hover:opacity-80 transition-opacity"
-              >
-                Support
-              </a>
+            <div
+              className="underline underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer"
+              onClick={handlePrivacyPolicyClick}
+            >
+              Privacy Policy
             </div>
           </div>
         </ul>
