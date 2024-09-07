@@ -1,4 +1,4 @@
-# 🏗 Scaffold-ETH 2 website
+# CureLedger Landing Page
 
 Work in progress.
 
@@ -16,8 +16,8 @@ Before you begin, you need to install the following tools:
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/scaffold-eth/scaffoldeth.io.git
-cd scaffoldeth.io
+git clone https://github.com/martianina/cureledger-landing.git
+cd cureledger-landing
 yarn install
 ```
 
