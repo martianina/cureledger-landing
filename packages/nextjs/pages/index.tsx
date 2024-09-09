@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
-import Popup from "~~/components/popup";
+import Popup from "~~/components/Popup";
 
 const Home: NextPage = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -46,12 +46,13 @@ const Home: NextPage = () => {
             >
               White Paper
             </a>
-            <button
+            {/* Commented out the popup trigger for sign-up */}
+            {/* <button
               className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
               onClick={togglePopup}
             >
               Sign Up for Updates
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -115,19 +116,20 @@ const Home: NextPage = () => {
                 Our goal is to jump-start YOUR healthcare technology success
               </p>
 
-              <button
+              {/* Commented out the popup trigger for connect */}
+              {/* <button
                 className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
                 onClick={togglePopup}
               >
                 Connect
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
       </div>
       <div className="mt-10"></div>
 
-      {/* Buidl in Community */}
+      {/* DSCI Token */}
       <div className="bg-[url(/assets/network.png)] h-[576px] bg-cover bg-center flex items-end justify-center">
         <div className="flex flex-col justify-center items-center bg-base-200 w-4/5 max-w-3xl lg:w-5/12 rounded-3xl shadow-lg shadow-primary p-10 gap-4 -mb-12">
           <Image src="/favicon.png" alt="cureledger logo" height={30} width={30} />
@@ -137,12 +139,21 @@ const Home: NextPage = () => {
           <p className="text-center m-0">Powers the CureLedger Marketplace</p>
           <p className="text-center m-0">Utilizing MiCA for compliance</p>
 
-          <button
-            className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
-            onClick={togglePopup}
+          {/* Add White Paper button */}
+          <a
+            href="https://docsend.com/view/6d98ecgkr8vkxfb5"
+            className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
           >
-            Get DSCI Notifications
-          </button>
+            Read White Paper
+          </a>
+
+          {/* Commented out the popup trigger for DSCI notifications */}
+          {/* <button
+      className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
+      onClick={togglePopup}
+    >
+      Get DSCI Notifications
+    </button> */}
         </div>
       </div>
       <div className="mt-10"></div>
@@ -172,12 +183,13 @@ const Home: NextPage = () => {
               >
                 Read White Paper
               </a>
-              <button
+              {/* Commented out the popup trigger for testnet updates */}
+              {/* <button
                 className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
                 onClick={togglePopup}
               >
                 Get Testnet Updates
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
