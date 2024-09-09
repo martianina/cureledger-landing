@@ -1,13 +1,20 @@
-//import { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
+import Popup from "~~/components/popup";
 
 const Home: NextPage = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
   return (
     <>
       <MetaHeader />
-      {/* Hero section  */}
+      {/* Hero section */}
       <div
         className="flex flex-col items-center py-8 gap-12 md:gap-20"
         style={{ backgroundImage: `url(/assets/bg.png)`, backgroundRepeat: "repeat" }}
@@ -39,12 +46,12 @@ const Home: NextPage = () => {
             >
               White Paper
             </a>
-            <a
-              href="https://rymedi.com/contact-us"
+            <button
               className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
+              onClick={togglePopup}
             >
-              Connect
-            </a>
+              Sign Up for Updates
+            </button>
           </div>
         </div>
       </div>
@@ -108,47 +115,16 @@ const Home: NextPage = () => {
                 Our goal is to jump-start YOUR healthcare technology success
               </p>
 
-              <a
-                href="https://rymedi.com/contact-us"
+              <button
                 className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
+                onClick={togglePopup}
               >
                 Connect
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-10"></div>
-
-      {/* Debug Contracts */}
-      <div className="bg-base-300/20">
-        <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
-          <div className="space-y-6">
-            <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 pt-4 lg:pt-0">
-              <Image src="/favicon.png" alt="cureledger logo" height={30} width={30} />
-              <p className="text-center lg:text-left text-xl m-0 font-light">CURELEDGER MARKETPLACE</p>
-            </div>
-
-            <h2 className="text-2xl lg:text-4xl lg:w-4/5 text-center lg:text-left font-medium">
-              Individual Data Sovereignty Unlocks Innovation & Monetization
-            </h2>
-            <p className="m-auto text-center lg:text-left lg:mx-0 max-w-[300px] lg:max-w-none lg:w-3/4">
-              Data contributors are incentivized to contribute data because they receive benefits in terms of health
-              care impact and tokenized rewards.
-            </p>
-            <p className="m-auto text-center lg:text-left lg:mx-0 max-w-[300px] lg:max-w-none lg:w-3/4">
-              Data consumers buy verifiable, merchantable, reusable data, meaning innovation is accelerated.
-            </p>
-            <p className="m-auto text-center lg:text-left lg:mx-0 max-w-[300px] lg:max-w-none lg:w-3/4">
-              Data brokers harness merchantable health care data for novel insight and monetization.
-            </p>
-          </div>
-          <div className="max-w-[400px] lg:max-w-none">
-            <Image src="/assets/explosion.png" alt="purple-sphere" width={1400} height={1400} />
-          </div>
-        </div>
-      </div>
-      <div className="mt-10"></div>
       <div className="mt-10"></div>
 
       {/* Buidl in Community */}
@@ -161,12 +137,12 @@ const Home: NextPage = () => {
           <p className="text-center m-0">Powers the CureLedger Marketplace</p>
           <p className="text-center m-0">Utilizing MiCA for compliance</p>
 
-          <a
-            href="https://rymedi.com/contact-us"
+          <button
             className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
+            onClick={togglePopup}
           >
-            Get DSCI notifications
-          </a>
+            Get DSCI Notifications
+          </button>
         </div>
       </div>
       <div className="mt-10"></div>
@@ -190,25 +166,25 @@ const Home: NextPage = () => {
               <h2 className="text-2xl lg:text-4xl text-center lg:text-left font-medium">
                 CureLedger’s validators underpin the most valuable and impactful human data set in the world.
               </h2>
-              {/* Updated whitepaper link */}
-              <div className="flex flex-wrap gap-4 items-center justify-center">
-                <a
-                  href="https://docsend.com/view/6d98ecgkr8vkxfb5"
-                  className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
-                >
-                  Read White Paper
-                </a>
-                <a
-                  href="https://rymedi.com/contact-us"
-                  className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
-                >
-                  Get CureLedger testnet updates
-                </a>
-              </div>
+              <a
+                href="https://docsend.com/view/6d98ecgkr8vkxfb5"
+                className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
+              >
+                Read White Paper
+              </a>
+              <button
+                className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
+                onClick={togglePopup}
+              >
+                Get Testnet Updates
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Popup for email sign-up */}
+      <Popup isOpen={isPopupOpen} onClose={togglePopup} />
     </>
   );
 };
