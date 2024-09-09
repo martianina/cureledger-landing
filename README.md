@@ -1,6 +1,6 @@
 # CureLedger Landing Page
 
-Work in progress.
+Work in progress
 
 ## Requirements
 
