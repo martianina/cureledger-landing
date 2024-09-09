@@ -39,17 +39,11 @@ const Home: NextPage = () => {
             >
               White Paper
             </a>
-            <a
-              href="https://rymedi.com/contact-us"
-              className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
-            >
-              Connect
-            </a>
           </div>
         </div>
       </div>
 
-      {/* Debug Contracts */}
+      {/* about */}
       <div className="bg-base-300/20">
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
           <div className="space-y-6">
@@ -84,7 +78,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/* SE-2 Components */}
+      {/* Compliance */}
       <div className="bg-base-300/60">
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:px-12 flex flex-col lg:flex-row justify-between items-center gap-5 lg:gap-0">
           <div className="flex flex-col items-center">
@@ -107,20 +101,13 @@ const Home: NextPage = () => {
               <p className="m-auto text-center lg:text-left lg:mx-0 max-w-[300px] lg:max-w-none lg:w-3/4">
                 Our goal is to jump-start YOUR healthcare technology success
               </p>
-
-              <a
-                href="https://rymedi.com/contact-us"
-                className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
-              >
-                Connect
-              </a>
             </div>
           </div>
         </div>
       </div>
       <div className="mt-10"></div>
 
-      {/* Debug Contracts */}
+      {/* Marketplace */}
       <div className="bg-base-300/20">
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
           <div className="space-y-6">
@@ -162,10 +149,10 @@ const Home: NextPage = () => {
           <p className="text-center m-0">Utilizing MiCA for compliance</p>
 
           <a
-            href="https://rymedi.com/contact-us"
-            className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
+            href="https://docsend.com/view/6d98ecgkr8vkxfb5"
+            className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
           >
-            Get DSCI notifications
+            Read White Paper
           </a>
         </div>
       </div>
@@ -191,20 +178,7 @@ const Home: NextPage = () => {
                 CureLedger’s validators underpin the most valuable and impactful human data set in the world.
               </h2>
               {/* Updated whitepaper link */}
-              <div className="flex flex-wrap gap-4 items-center justify-center">
-                <a
-                  href="https://docsend.com/view/6d98ecgkr8vkxfb5"
-                  className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
-                >
-                  Read White Paper
-                </a>
-                <a
-                  href="https://rymedi.com/contact-us"
-                  className="btn btn-outline btn-sm px-5 h-10 bg-secondary text-white normal-case font-normal text-lg flex items-center gap-2"
-                >
-                  Get CureLedger testnet updates
-                </a>
-              </div>
+              <div className="flex flex-wrap gap-4 items-center justify-center"></div>
             </div>
           </div>
         </div>
