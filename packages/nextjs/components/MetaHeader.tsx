@@ -14,7 +14,7 @@ type MetaHeaderProps = {
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` : "/";
 
 export const MetaHeader = ({
-  title = "CureLedger",
+  title = "DeSciLife",
   description = "Verifiable Health Data Marketplace",
   image = "/assets/logo-text.png",
   twitterCard = "summary_large_image",
@@ -49,11 +49,11 @@ export const MetaHeader = ({
 
           <meta property="fc:frame:button:1" content="🛠️ GitHub" />
           <meta property="fc:frame:button:1:action" content="link" />
-          <meta property="fc:frame:button:1:target" content="https://github.com/scaffold-eth/scaffold-eth-2" />
+          <meta property="fc:frame:button:1:target" content="https://descilife.com" />
 
           <meta property="fc:frame:button:2" content="📃 Docs" />
           <meta property="fc:frame:button:2:action" content="link" />
-          <meta property="fc:frame:button:2:target" content="https://docs.scaffoldeth.io/" />
+          <meta property="fc:frame:button:2:target" content="https://rymedi.com/" />
 
           <meta property="fc:frame:button:3" content="Features →" />
           <meta property="fc:frame:post_url" content={`${baseUrl}api?id=1`} />
