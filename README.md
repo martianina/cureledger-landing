@@ -1,4 +1,4 @@
-# CureLedger Landing Page
+# DeSciLife Landing Page
 
 Work in progress
 
@@ -16,8 +16,8 @@ Before you begin, you need to install the following tools:
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/martianina/cureledger-landing.git
-cd cureledger-landing
+git clone https://github.com/martianina/descilife.git
+cd descilife
 yarn install
 ```
 
