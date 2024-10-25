@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
           <div className="space-y-6">
             <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 pt-4 lg:pt-0">
-              <Image src="/favicon.png" alt="cureledger logo" height={30} width={30} />
+              <Image src="/icon-violet.png" alt="cureledger logo" height={30} width={30} />
               <p className="text-center lg:text-left text-xl m-0 font-light">DEDICATED TO GLOBAL HEALTH</p>
             </div>
 
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
           </div>
           <div className="space-y-6 flex flex-col items-center lg:items-end">
             <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 lg:w-3/4 pt-4 lg:pt-0">
-              <Image src="/favicon.png" alt="cureledger logo" height={20} width={20} />
+              <Image src="/icon-violet.png" alt="cureledger logo" height={20} width={20} />
               <p className="text-center lg:text-left text-xl m-0 font-light">COMPLIANCE CORE</p>
             </div>
             <div className="lg:w-3/4 space-y-5">
@@ -112,7 +112,7 @@ const Home: NextPage = () => {
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
           <div className="space-y-6">
             <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 pt-4 lg:pt-0">
-              <Image src="/favicon.png" alt="cureledger logo" height={30} width={30} />
+              <Image src="/icon-violet.png" alt="cureledger logo" height={30} width={30} />
               <p className="text-center lg:text-left text-xl m-0 font-light">CURELEDGER MARKETPLACE</p>
             </div>
 
@@ -141,7 +141,7 @@ const Home: NextPage = () => {
       {/* Buidl in Community */}
       <div className="bg-[url(/assets/network.png)] h-[576px] bg-cover bg-center flex items-end justify-center">
         <div className="flex flex-col justify-center items-center bg-base-200 w-4/5 max-w-3xl lg:w-5/12 rounded-3xl shadow-lg shadow-primary p-10 gap-4 -mb-12">
-          <Image src="/favicon.png" alt="cureledger logo" height={30} width={30} />
+          <Image src="/icon-violet.png" alt="cureledger logo" height={30} width={30} />
           <a
             href="https://docsend.com/v/thypw/cureledger"
             className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
@@ -158,13 +158,13 @@ const Home: NextPage = () => {
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-24 lg:pb-20 lg:pt-28 lg:pl-4 flex flex-col justify-between items-center lg:flex-row gap-5 lg:gap-0">
           <div className="flex flex-col items-center">
             <div className="max-w-[400px] lg:max-w-none">
-              <Image src="/assets/logo-violet.png" alt="Validators" width={500} height={500} />
+              <Image src="/assets/icon-violet.png" alt="Validators" width={500} height={500} />
             </div>
           </div>
 
           <div className="space-y-6 flex flex-col items-center lg:pl-16">
             <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 lg:w-3/4 pt-4 lg:pt-0">
-              <Image src="/favicon.png" alt="cureledger logo" height={20} width={20} />
+              <Image src="/icon-violet.png" alt="cureledger logo" height={20} width={20} />
               <p className="text-center lg:text-left text-xl m-0 font-light">VALIDATORS</p>
             </div>
             <div className="lg:w-3/4 space-y-6">

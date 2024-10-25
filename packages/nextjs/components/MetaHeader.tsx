@@ -16,12 +16,12 @@ const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT
 export const MetaHeader = ({
   title = "CureLEdger",
   description = "Verifiable Health Data Marketplace",
-  image = "/assets/logo-text.png",
+  image = "/assets/icon-violet.png",
   twitterCard = "summary_large_image",
   children,
 }: MetaHeaderProps) => {
   const imageUrl = baseUrl + image;
-  const twitterImageUrl = baseUrl + "/assets/logo-text.png";
+  const twitterImageUrl = baseUrl + "/assets/icon-violet.png";
 
   return (
     <Head>
