@@ -142,8 +142,6 @@ const Home: NextPage = () => {
       <div className="bg-[url(/assets/network.png)] h-[576px] bg-cover bg-center flex items-end justify-center">
         <div className="flex flex-col justify-center items-center bg-base-200 w-4/5 max-w-3xl lg:w-5/12 rounded-3xl shadow-lg shadow-primary p-10 gap-4 -mb-12">
           <Image src="/favicon.png" alt="cureledger logo" height={30} width={30} />
-  
-          
           <a
             href="https://docsend.com/v/thypw/cureledger"
             className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
