@@ -14,7 +14,7 @@ type MetaHeaderProps = {
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` : "/";
 
 export const MetaHeader = ({
-  title = "DeSciLife",
+  title = "CureLEdger",
   description = "Verifiable Health Data Marketplace",
   image = "/assets/logo-text.png",
   twitterCard = "summary_large_image",
