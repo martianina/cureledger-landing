@@ -10,17 +10,17 @@ const Home: NextPage = () => {
       {/* Hero section  */}
       <div
         className="flex flex-col items-center py-8 gap-12 md:gap-20"
-        style={{ backgroundImage: `url(/assets/bg.png)`, backgroundRepeat: "repeat" }}
+        style={{ backgroundImage: `url(/assets/network.png)`, backgroundRepeat: "" }}
       >
         <div className="flex items-center gap-2">
           <div className="flex relative w-10 h-10">
             <Image alt="CureLedger Logo" className="cursor-pointer" fill src="/favicon.png" />
           </div>
-          <p className="text-3xl m-0 font-medium mt-1">CureLedger</p>
+          <p className="text-3xl text-primary m-0 font-medium mt-1">CureLedger</p>
         </div>
         <div className="flex flex-col justify-center items-center gap-8 mb-14 px-4">
           <h1 className="text-center text-3xl lg:text-5xl max-w-md lg:max-w-2xl px-3 m-0">
-            The Verifiable Health Data Marketplace
+            Infrastructure for Health Data Marketplaces
           </h1>
           <h3 className="text-center text-3xl lg:text-2xl max-w-md lg:max-w-2xl px-3 m-0">
             Proven blockchain-based health data solutions
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           <div className="flex flex-wrap gap-4 items-center justify-center">
             <a
               href="https://docsend.com/v/thypw/cureledger"
-              className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
+              className="btn btn-outline btn-sm px-5 h-10 bg-info normal-case font-normal text-lg text-base-100"
             >
               White Paper
             </a>
@@ -48,8 +48,8 @@ const Home: NextPage = () => {
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
           <div className="space-y-6">
             <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 pt-4 lg:pt-0">
-              <Image src="/icon-violet.png" alt="cureledger logo" height={30} width={30} />
-              <p className="text-center lg:text-left text-xl m-0 font-light">DEDICATED TO GLOBAL HEALTH</p>
+              <Image src="/icon.png" alt="cureledger logo" height={30} width={30} />
+              <p className="text-center lg:text-left text-xl text-primary m-0 font-light">DEDICATED TO GLOBAL HEALTH</p>
             </div>
 
             <h2 className="text-2xl lg:text-4xl lg:w-4/5 text-center lg:text-left font-medium">
@@ -73,7 +73,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="max-w-[400px] lg:max-w-none">
-            <Image src="/assets/globe.png" alt="globe-stethoscope" width={1400} height={1400} />
+            <Image src="/assets/globe-stethoscope.png" alt="globe-stethoscope" width={1400} height={1400} />
           </div>
         </div>
       </div>
@@ -83,13 +83,13 @@ const Home: NextPage = () => {
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:px-12 flex flex-col lg:flex-row justify-between items-center gap-5 lg:gap-0">
           <div className="flex flex-col items-center">
             <div className="max-w-[400px] lg:max-w-none">
-              <Image src="/assets/compliance-flow.png" alt="CureLedger Compliance" width={2500} height={2500} />
+              <Image src="/assets/flow.png" alt="CureLedger Compliance" width={2500} height={2500} />
             </div>
           </div>
           <div className="space-y-6 flex flex-col items-center lg:items-end">
             <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 lg:w-3/4 pt-4 lg:pt-0">
-              <Image src="/icon-violet.png" alt="cureledger logo" height={20} width={20} />
-              <p className="text-center lg:text-left text-xl m-0 font-light">COMPLIANCE CORE</p>
+              <Image src="/icon.png" alt="cureledger logo" height={20} width={20} />
+              <p className="text-center lg:text-left text-xl text-primary m-0 font-light">COMPLIANCE CORE</p>
             </div>
             <div className="lg:w-3/4 space-y-5">
               <h2 className="text-2xl lg:text-4xl lg:w-4/5 text-center lg:text-left font-medium">
@@ -112,8 +112,10 @@ const Home: NextPage = () => {
         <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
           <div className="space-y-6">
             <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 pt-4 lg:pt-0">
-              <Image src="/icon-violet.png" alt="cureledger logo" height={30} width={30} />
-              <p className="text-center lg:text-left text-xl m-0 font-light">CURELEDGER MARKETPLACE</p>
+              <Image src="/icon.png" alt="cureledger logo" height={30} width={30} />
+              <p className="text-center lg:text-left text-xl text-primary m-0 font-light">
+                HEALTH DATA ECONOMY INFRASTRUCTURE
+              </p>
             </div>
 
             <h2 className="text-2xl lg:text-4xl lg:w-4/5 text-center lg:text-left font-medium">
@@ -131,7 +133,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="max-w-[400px] lg:max-w-none">
-            <Image src="/assets/explosion.png" alt="purple-sphere" width={1400} height={1400} />
+            <Image src="/assets/2.png" alt="purple-sphere" width={1400} height={1400} />
           </div>
         </div>
       </div>
@@ -139,12 +141,24 @@ const Home: NextPage = () => {
       <div className="mt-10"></div>
 
       {/* Buidl in Community */}
-      <div className="bg-[url(/assets/network.png)] h-[576px] bg-cover bg-center flex items-end justify-center">
+      <div className="h-[576px] bg-cover bg-center flex items-end justify-center">
         <div className="flex flex-col justify-center items-center bg-base-200 w-4/5 max-w-3xl lg:w-5/12 rounded-3xl shadow-lg shadow-primary p-10 gap-4 -mb-12">
-          <Image src="/icon-violet.png" alt="cureledger logo" height={30} width={30} />
+          <Image src="/icon.png" alt="cureledger logo" height={30} width={30} />
+          <div className="space-y-6 flex flex-col items-center lg:pl-16">
+            <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 lg:w-3/4 pt-4 lg:pt-0">
+              <p className="text-center lg:text-left text-xl text-primary text-center m-0 font-light">VALIDATORS</p>
+            </div>
+            <div className="lg:w-3/4 space-y-6">
+              <h2 className="text-2xl lg:text-4xl text-center lg:text-center font-medium">
+                CureLedger validators underpin the most valuable and impactful human data set in the world.
+              </h2>
+              {/* Updated whitepaper link */}
+              <div className="flex flex-wrap gap-4 items-center justify-center"></div>
+            </div>
+          </div>
           <a
             href="https://docsend.com/v/thypw/cureledger"
-            className="btn btn-outline btn-sm px-5 h-10 bg-base-100 normal-case font-normal text-lg"
+            className="btn btn-outline btn-sm px-5 h-10 bg-warning normal-case font-normal text-lg text-base-100"
           >
             Read White Paper
           </a>
@@ -152,31 +166,6 @@ const Home: NextPage = () => {
       </div>
       <div className="mt-10"></div>
       <div className="mt-10"></div>
-
-      {/* Block Explorer */}
-      <div className="bg-base-200">
-        <div className="container max-w-[90%] lg:max-w-7xl m-auto py-24 lg:pb-20 lg:pt-28 lg:pl-4 flex flex-col justify-between items-center lg:flex-row gap-5 lg:gap-0">
-          <div className="flex flex-col items-center">
-            <div className="max-w-[400px] lg:max-w-none">
-              <Image src="/assets/icon-violet.png" alt="Validators" width={500} height={500} />
-            </div>
-          </div>
-
-          <div className="space-y-6 flex flex-col items-center lg:pl-16">
-            <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 lg:w-3/4 pt-4 lg:pt-0">
-              <Image src="/icon-violet.png" alt="cureledger logo" height={20} width={20} />
-              <p className="text-center lg:text-left text-xl m-0 font-light">VALIDATORS</p>
-            </div>
-            <div className="lg:w-3/4 space-y-6">
-              <h2 className="text-2xl lg:text-4xl text-center lg:text-left font-medium">
-                CureLedger validators underpin the most valuable and impactful human data set in the world.
-              </h2>
-              {/* Updated whitepaper link */}
-              <div className="flex flex-wrap gap-4 items-center justify-center"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
