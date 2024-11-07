@@ -7,10 +7,9 @@ const Home: NextPage = () => {
   return (
     <>
       <MetaHeader />
-      {/* Hero section  */}
       <div
-        className="flex flex-col items-center py-8 gap-12 md:gap-20"
-        style={{ backgroundImage: `url(/assets/network.png)`, backgroundRepeat: "" }}
+        className="flex flex-col items-center py-8 gap-12 md:gap-20 w-full bg-cover bg-center"
+        style={{ backgroundImage: `url(/assets/network.png)` }}
       >
         <div className="flex flex-col md:flex-row items-center gap-2">
           <div className="flex relative w-10 h-10">
