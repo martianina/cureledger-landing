@@ -12,11 +12,11 @@ const Home: NextPage = () => {
         className="flex flex-col items-center py-8 gap-12 md:gap-20"
         style={{ backgroundImage: `url(/assets/network.png)`, backgroundRepeat: "" }}
       >
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col md:flex-row items-center gap-2">
           <div className="flex relative w-10 h-10">
             <Image alt="CureLedger Logo" className="cursor-pointer" fill src="/favicon.png" />
           </div>
-          <p className="text-3xl text-primary m-0 font-medium mt-1">CureLedger</p>
+          <p className="text-2xl sm:text-3xl text-primary m-0 font-medium mt-1 text-center md:text-left">CureLedger</p>
         </div>
         <div className="flex flex-col justify-center items-center gap-8 mb-14 px-4">
           <h1 className="text-center text-3xl lg:text-5xl max-w-md lg:max-w-2xl px-3 m-0">
@@ -105,67 +105,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10"></div>
-
-      {/* Marketplace */}
-      <div className="bg-base-300/20">
-        <div className="container max-w-[90%] lg:max-w-7xl m-auto py-16 lg:py-20 lg:pl-12 lg:pr-6 flex flex-col-reverse lg:flex-row items-center gap-5 lg:gap-0">
-          <div className="space-y-6">
-            <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 pt-4 lg:pt-0">
-              <Image src="/icon.png" alt="cureledger logo" height={30} width={30} />
-              <p className="text-center lg:text-left text-xl text-primary m-0 font-light">
-                HEALTH DATA ECONOMY INFRASTRUCTURE
-              </p>
-            </div>
-
-            <h2 className="text-2xl lg:text-4xl lg:w-4/5 text-center lg:text-left font-medium">
-              Individual Data Sovereignty Unlocks Innovation & Monetization
-            </h2>
-            <p className="m-auto text-center lg:text-left lg:mx-0 max-w-[300px] lg:max-w-none lg:w-3/4">
-              Data contributors are incentivized to contribute data because they receive benefits in terms of health
-              care impact and tokenized rewards.
-            </p>
-            <p className="m-auto text-center lg:text-left lg:mx-0 max-w-[300px] lg:max-w-none lg:w-3/4">
-              Data consumers buy verifiable, merchantable, reusable data, meaning innovation is accelerated.
-            </p>
-            <p className="m-auto text-center lg:text-left lg:mx-0 max-w-[300px] lg:max-w-none lg:w-3/4">
-              Data brokers harness merchantable health care data for novel insight and monetization.
-            </p>
-          </div>
-          <div className="max-w-[400px] lg:max-w-none">
-            <Image src="/assets/2.png" alt="purple-sphere" width={1400} height={1400} />
-          </div>
-        </div>
-      </div>
-      <div className="mt-10"></div>
-      <div className="mt-10"></div>
-
-      {/* Buidl in Community */}
-      <div className="h-[576px] bg-cover bg-center flex items-end justify-center">
-        <div className="flex flex-col justify-center items-center bg-base-200 w-4/5 max-w-3xl lg:w-5/12 rounded-3xl shadow-lg shadow-primary p-10 gap-4 -mb-12">
-          <Image src="/icon.png" alt="cureledger logo" height={30} width={30} />
-          <div className="space-y-6 flex flex-col items-center lg:pl-16">
-            <div className="flex items-center justify-center lg:flex-col lg:items-start lg:justify-start gap-2 lg:w-3/4 pt-4 lg:pt-0">
-              <p className="text-center lg:text-left text-xl text-primary text-center m-0 font-light">VALIDATORS</p>
-            </div>
-            <div className="lg:w-3/4 space-y-6">
-              <h2 className="text-2xl lg:text-4xl text-center lg:text-center font-medium">
-                CureLedger validators underpin the most valuable and impactful human data set in the world.
-              </h2>
-              {/* Updated whitepaper link */}
-              <div className="flex flex-wrap gap-4 items-center justify-center"></div>
-            </div>
-          </div>
-          <a
-            href="https://docsend.com/v/thypw/cureledger"
-            className="btn btn-outline btn-sm px-5 h-10 bg-warning normal-case font-normal text-lg text-base-100"
-          >
-            Read White Paper
-          </a>
-        </div>
-      </div>
-      <div className="mt-10"></div>
-      <div className="mt-10"></div>
     </>
   );
 };
