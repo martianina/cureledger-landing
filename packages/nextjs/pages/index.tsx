@@ -33,7 +33,7 @@ const Home: NextPage = () => {
           <h2 className="text-center text-3xl lg:text-4xl max-w-md lg:max-w-2xl px-3 m-0">1,000,000+ Lives Impacted</h2>
           <div className="flex flex-wrap gap-4 items-center justify-center">
             <a
-              href="https://docsend.com/v/thypw/cureledger"
+              href="https://docs.google.com/document/u/1/d/e/2PACX-1vSiuEz_BdUV5knfaYiKzcIVyZk6nGUdrSSWEwtyQJkb1xVInx5xSnkB32wyz2cMt2kalIrmQAqTt6GE/pub"
               className="btn btn-outline btn-sm px-5 h-10 bg-info normal-case font-normal text-lg text-base-100"
             >
               White Paper
