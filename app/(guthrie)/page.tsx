@@ -302,18 +302,7 @@ export default function GuthrieLanding() {
       {/* ── SECTION 5 — Join (MailerLite) ────────────────────────── */}
       <section className="border-t border-base-300 bg-primary/5" id="join">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 md:py-24">
-          <div className="text-center">
-            <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-primary mb-3">
-              Join us
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-base-content">
-              Get on the list.
-            </h2>
-            <p className="mt-4 text-sm font-semibold text-base-content md:text-base">
-              Notify me when Cureledger launches.
-            </p>
-          </div>
-          <div className="mx-auto mt-8 max-w-xl">
+          <div className="mx-auto max-w-xl">
             <JoinForm prominent reassurance={null} />
           </div>
         </div>
