@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --shadow-center: 0 0 12px -2px rgb(0 0 0 / 0.05);
+  --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --font-sans: var(--font-space-grotesk, ui-sans-serif, system-ui, sans-serif);
+}
+
+@plugin "daisyui" {
+  themes:
+    light,
+    dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  --color-primary: #56c5fb;
+  --color-primary-content: #ffffff;
+  --color-secondary: #fd9905;
+  --color-secondary-content: #ffffff;
+  --color-accent: #2baceb;
+  --color-accent-content: #ffffff;
+  --color-neutral: #ededed;
+  --color-neutral-content: #0a1628;
+  --color-base-100: #0a1628;
+  --color-base-200: #0d1b30;
+  --color-base-300: #132240;
+  --color-base-content: #f0f4f8;
+  --color-info: #ffa810;
+  --color-success: #2baceb;
+  --color-warning: #ffa810;
+  --color-error: #ef4444;
+  --radius-field: 9999rem;
+  --radius-box: 1rem;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: #56c5fb;
+  --color-primary-content: #ffffff;
+  --color-secondary: #fd9905;
+  --color-secondary-content: #ffffff;
+  --color-accent: #2baceb;
+  --color-accent-content: #ffffff;
+  --color-neutral: #ededed;
+  --color-neutral-content: #0a1628;
+  --color-base-100: #0a1628;
+  --color-base-200: #0d1b30;
+  --color-base-300: #132240;
+  --color-base-content: #f0f4f8;
+  --color-info: #ffa810;
+  --color-success: #2baceb;
+  --color-warning: #ffa810;
+  --color-error: #ef4444;
+  --radius-field: 9999rem;
+  --radius-box: 1rem;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  p { margin: 1rem 0; }
+  body { min-height: 100vh; }
+  h1, h2, h3, h4 { margin-bottom: 0.5rem; line-height: 1; }
+}
+
+:root, [data-theme] {
+  background: var(--color-base-200);
+}
+
+.btn { @apply shadow-md; }
+.btn.btn-ghost { @apply shadow-none; }
+.link { text-underline-offset: 2px; }
+.link:hover { opacity: 80%; }
+
+.guthrie-hero-bg {
+  background: radial-gradient(
+    ellipse at top,
+    color-mix(in srgb, var(--color-primary) 10%, var(--color-base-100)) 0%,
+    var(--color-base-100) 80%
+  );
+}
+
+.guthrie-hero-glow {
+  width: 800px;
+  height: 800px;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  filter: blur(60px);
+}
