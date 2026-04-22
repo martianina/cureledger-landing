@@ -23,4 +23,6 @@ Copy `.env.example` to `.env.local` and set `ELIZAOS_API_URL` to your Guthrie El
 
 Connect this repository to [Vercel](https://vercel.com) (root directory: repo root). Set production environment variables as in `.env.example`.
 
+Pushes to `main` trigger production deploys when the project is connected.
+
 MIT
