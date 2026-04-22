@@ -25,27 +25,28 @@ export default function GuthrieLanding() {
   return (
     <div className="text-base-content" id="top">
 
-      {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section
-        className="relative flex min-h-[min(92vh,56rem)] flex-col justify-end overflow-hidden bg-base-100 bg-cover bg-center bg-no-repeat px-4 pt-28 pb-4 sm:px-6 sm:pb-5 md:min-h-[min(90vh,60rem)] md:pt-32 md:pb-5 lg:pb-6"
-        style={{ backgroundImage: "url(/assets/network.png)" }}
-      >
-        <div className="relative z-[1] mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <div className="flex flex-col items-center">
+      {/* Hero: content defines height. Background is absolute + min-h = section height, so
+          there is no extra “fake” min-height under the last line (that was the navy void). */}
+      <section className="relative overflow-hidden bg-base-100">
+        <div
+          className="pointer-events-none absolute inset-0 z-0 min-h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url(/assets/network.png)" }}
+        />
+        <div className="relative z-10 mx-auto w-full max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-24 md:py-28">
+          <div className="mx-auto flex flex-col items-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-bold tracking-tight text-white leading-[1.15]">
               <span className="block">Rare disease has been waiting on AI.</span>
               <span className="block mt-2 md:mt-3">AI has been waiting on us.</span>
             </h1>
-            <p className="mt-12 max-w-xl text-xs sm:text-sm font-mono font-bold text-secondary uppercase tracking-[0.28em] md:mt-16">
+            <p className="mt-20 max-w-xl text-xs sm:text-sm font-mono font-bold text-secondary uppercase tracking-[0.28em] sm:mt-24 md:mt-32">
               Cureledger. End rare disease.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Bridge: what Cureledger is — pad evenly so the line centers between tagline and FDA banner */}
       <section className="border-b border-base-300 bg-base-100">
-        <div className="mx-auto max-w-3xl px-4 py-8 text-center sm:px-6">
+        <div className="mx-auto max-w-3xl px-4 py-10 text-center sm:px-6 sm:py-12 md:py-14">
           <h2 className="text-lg font-bold leading-snug text-base-content sm:text-xl md:text-2xl md:leading-snug">
             Cureledger is the life data trust for rare disorders.
           </h2>
