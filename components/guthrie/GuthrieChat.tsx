@@ -175,14 +175,32 @@ export function GuthrieChat() {
         }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        const err =
+          (typeof data?.error === "string" && data.error) ||
+          `Chat failed (${res.status}). Check Vercel env ELIZAOS_API_URL and Railway.`;
+        setMessages(prev => [
+          ...prev,
+          {
+            id: `assistant-${Date.now()}`,
+            role: "assistant",
+            content: err,
+            timestamp: Date.now(),
+          },
+        ]);
+        return;
+      }
 
       if (data.sessionId) sessionIdRef.current = data.sessionId;
 
       const reply: Message = {
         id: `assistant-${Date.now()}`,
         role: "assistant",
-        content: data.reply || "I'm having trouble responding right now. Try again in a moment.",
+        content:
+          data.reply ||
+          "I'm having trouble responding right now. Try again in a moment.",
         timestamp: Date.now(),
       };
       setMessages(prev => [...prev, reply]);

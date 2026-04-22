@@ -1,22 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const ELIZAOS_BASE = process.env.ELIZAOS_API_URL || "http://localhost:3001";
+export const dynamic = "force-dynamic";
+
+const ELIZAOS_BASE = (process.env.ELIZAOS_API_URL || "http://localhost:3001").replace(
+  /\/$/,
+  "",
+);
 const SESSIONS_API = `${ELIZAOS_BASE}/api/messaging/sessions`;
 const AGENTS_API = `${ELIZAOS_BASE}/api/agents`;
 
 let cachedAgentId: string | null = null;
 
+function normalizeAgents(data: any): any[] {
+  if (Array.isArray(data)) return data;
+  const a = data?.data?.agents ?? data?.agents ?? data?.data;
+  if (Array.isArray(a)) return a;
+  return [];
+}
+
+function isGuthrieAgent(a: any): boolean {
+  const n = String(a?.name ?? "").toLowerCase();
+  if (n !== "guthrie") return false;
+  const s = String(a?.status ?? "active").toLowerCase();
+  return s === "active" || s === "running" || s === "started" || a?.status == null;
+}
+
 async function getGuthrieAgentId(): Promise<string | null> {
   if (cachedAgentId) return cachedAgentId;
 
   try {
-    const res = await fetch(AGENTS_API);
+    const res = await fetch(AGENTS_API, { cache: "no-store" });
     if (!res.ok) return null;
     const data = await res.json();
-    const agents = data?.data?.agents || data?.agents || [];
-    const guthrie = agents.find(
-      (a: any) => a.name === "Guthrie" && a.status === "active",
-    );
+    const agents = normalizeAgents(data);
+    const guthrie = agents.find((a: any) => isGuthrieAgent(a)) ||
+      agents.find((a: any) => String(a?.name ?? "").toLowerCase() === "guthrie");
     if (guthrie?.id) {
       cachedAgentId = guthrie.id;
       return cachedAgentId;
@@ -53,6 +71,7 @@ export async function POST(req: NextRequest) {
       const sessionRes = await fetch(SESSIONS_API, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        cache: "no-store",
         body: JSON.stringify({
           agentId,
           userId: crypto.randomUUID(),
@@ -75,6 +94,7 @@ export async function POST(req: NextRequest) {
     const msgRes = await fetch(`${SESSIONS_API}/${activeSessionId}/messages`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      cache: "no-store",
       body: JSON.stringify({ content: text }),
     });
 
@@ -92,21 +112,33 @@ export async function POST(req: NextRequest) {
 
       const pollRes = await fetch(
         `${SESSIONS_API}/${activeSessionId}/messages?limit=3`,
+        { cache: "no-store" },
       );
       if (!pollRes.ok) continue;
 
       const pollData = await pollRes.json();
-      const messages = pollData?.messages || [];
+      const messages = pollData?.messages || pollData?.data?.messages || [];
+
+      const isFromAgent = (m: any) =>
+        m.isAgent === true ||
+        m.role === "assistant" ||
+        m.senderType === "agent" ||
+        m.type === "agent";
 
       const agentMsg = messages.find((m: any) => {
-        if (!m.isAgent) return false;
-        const msgTime = new Date(m.createdAt).getTime();
-        return msgTime >= sendTime - 2000;
+        if (!isFromAgent(m)) return false;
+        const t = m.createdAt || m.timestamp || m.created_at;
+        const msgTime = t ? new Date(t).getTime() : sendTime;
+        return msgTime >= sendTime - 5000;
       });
 
       if (agentMsg) {
-        reply = agentMsg.content || agentMsg.text;
-        break;
+        reply =
+          agentMsg.content ||
+          agentMsg.text ||
+          (typeof agentMsg.content === "object" && agentMsg.content?.text) ||
+          "";
+        if (reply) break;
       }
     }
 
