@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
+/** Vercel Pro: 60s avoids 504 while polling Railway. Hobby max is 10s — set GUTHRIE_MAX_POLL_MS=7500 or lower in env, or use Pro. */
+export const maxDuration = 60;
 
 const ELIZAOS_BASE = (process.env.ELIZAOS_API_URL || "http://localhost:3001").replace(
   /\/$/,
@@ -105,10 +107,18 @@ export async function POST(req: NextRequest) {
     }
 
     let reply: string | null = null;
-    const maxAttempts = 20;
-
-    for (let i = 0; i < maxAttempts; i++) {
-      await sleep(i < 2 ? 500 : i < 5 ? 1500 : 2000);
+    /** Default 7.5s keeps route under Vercel Hobby 10s wall. Pro: set e.g. GUTHRIE_MAX_POLL_MS=52000 in env. */
+    const maxPollMs = Math.min(
+      52_000,
+      Math.max(5000, Number.parseInt(process.env.GUTHRIE_MAX_POLL_MS || "7500", 10) || 7500),
+    );
+    const pollDeadline = Date.now() + maxPollMs;
+    let i = 0;
+    while (!reply && Date.now() < pollDeadline) {
+      const delay = i < 2 ? 500 : i < 6 ? 1000 : 1500;
+      await sleep(Math.min(delay, Math.max(0, pollDeadline - Date.now() - 100)));
+      if (Date.now() >= pollDeadline) break;
+      i++;
 
       const pollRes = await fetch(
         `${SESSIONS_API}/${activeSessionId}/messages?limit=3`,
