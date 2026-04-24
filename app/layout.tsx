@@ -31,12 +31,21 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: defaultTitle,
     description: defaultDescription,
+    images: [
+      {
+        url: "/og-preview.png",
+        width: 1432,
+        height: 762,
+        alt: "Cureledger, patient-sovereign rare disease data",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
     description: defaultDescription,
     site: "@CureLedger",
+    images: ["/og-preview.png"],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
 };
